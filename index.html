@@ -1,17 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+  <meta charset="UTF-8" />
   <title>Звуки</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-gray-100 p-6">
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-    {% for sound in sounds %}
-    <a href="/sound/{{ sound.id }}" class="bg-white rounded-xl shadow p-4 flex flex-col items-center hover:bg-gray-50 transition">
-      <img src="/static/{{ sound.image }}" class="w-24 h-24 mb-2" alt="Конус">
-      <span class="text-center font-semibold">{{ sound.name }}</span>
-    </a>
-    {% endfor %}
-  </div>
+<body>
+  <div class="container" id="sound-list"></div>
+
+  <script>
+    const sounds = [
+      {
+        id: "sound1",
+        name: "Машина едет",
+        volume: "громко",
+        image: "cones/cone1.png",
+        mp3_original: "sounds/sound1_original.mp3",
+        mp3_adjusted: "sounds/sound1_adjusted.mp3"
+      },
+      {
+        id: "sound2",
+        name: "Пешеход идет",
+        volume: "тихо",
+        image: "cones/cone2.png",
+        mp3_original: "sounds/sound2_original.mp3",
+        mp3_adjusted: "sounds/sound2_adjusted.mp3"
+      }
+    ];
+
+    const list = document.getElementById("sound-list");
+    sounds.forEach(sound => {
+      const card = document.createElement("a");
+      card.href = sound.html#${sound.id};
+      card.className = "sound-card";
+      card.innerHTML = 
+        <img src="${sound.image}" alt="Конус" />
+        <div class="sound-name">${sound.name}</div>
+      ;
+      list.appendChild(card);
+    });
+
+    localStorage.setItem("sounds", JSON.stringify(sounds));
+  </script>
 </body>
 </html>
+
