@@ -1,0 +1,78 @@
+body {
+  font-family: sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.sound-card {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: 150px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: black;
+  transition: transform 0.2s;
+}
+
+.sound-card:hover {
+  transform: scale(1.05);
+}
+
+.sound-card img {
+  width: 100px;
+  height: 100px;
+}
+
+.sound-name {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.sound-detail {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.sound-detail img {
+  width: 120px;
+  height: 120px;
+}
+
+.sound-detail h1 {
+  margin: 15px 0 5px;
+}
+
+.volume-label {
+  color: gray;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.buttons a {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 15px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.buttons a:nth-child(2) {
+  background: #555;
+}
