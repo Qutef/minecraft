@@ -22,52 +22,42 @@
       font-size: 20px;
       color: #333;
     }
-    input[type="file"] {
-      margin-bottom: 20px;
-    }
   </style>
 </head>
 <body>
-  <h1>Soundpad Web</h1>
-  <input type="file" id="audioFile" accept="audio/*">
-  <br>
-  <button onclick="playOriginal()">Оригинальный звук</button>
-  <button onclick="playMedium()">Средняя громкость</button>
+  <h1>Soundpad Web</h1><button onclick="playSound('original')">Оригинальный звук</button> <button onclick="playSound('medium')">Средняя громкость</button>
+
   <div id="volumeDisplay">Громкость: -</div>  <script>
-    let audioBuffer;
-    let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    let buffers = {};
 
-    document.getElementById('audioFile').addEventListener('change', async function(e) {
-      const file = e.target.files[0];
-      if (!file) return;
+    async function loadAudio(name, url) {
+      const response = await fetch(url);
+      const arrayBuffer = await response.arrayBuffer();
+      buffers[name] = await audioCtx.decodeAudioData(arrayBuffer);
+    }
 
-      const arrayBuffer = await file.arrayBuffer();
-      audioCtx.decodeAudioData(arrayBuffer, (buffer) => {
-        audioBuffer = buffer;
-      });
-    });
+    async function init() {
+      await loadAudio('original', 'original.mp3');
+      await loadAudio('medium', 'medium.mp3');
+    }
 
-    function playSound(volume) {
-      if (!audioBuffer) return alert('Сначала выберите аудиофайл.');
+    function playSound(type) {
+      if (!buffers[type]) return alert('Аудио не загружено.');
 
       const source = audioCtx.createBufferSource();
-      source.buffer = audioBuffer;
+      source.buffer = buffers[type];
 
       const gainNode = audioCtx.createGain();
-      gainNode.gain.value = volume;
+      gainNode.gain.value = 1.0;
 
       source.connect(gainNode).connect(audioCtx.destination);
       source.start();
 
-      document.getElementById('volumeDisplay').textContent = `Громкость: ${Math.round(volume * 100)}%`;
+      const label = type === 'original' ? '100%' : '50%';
+      document.getElementById('volumeDisplay').textContent = `Громкость: ${label}`;
     }
 
-    function playOriginal() {
-      playSound(1.0);
-    }
-
-    function playMedium() {
-      playSound(0.5);
-    }
+    init();
   </script></body>
 </html>
