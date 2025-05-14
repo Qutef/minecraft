@@ -43,55 +43,57 @@
   <div class="grid" id="buttonsContainer"></div>
   <div id="volumeDisplay">Громкость: -</div>  <script>
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    const sounds = [
-      { label: "Звук 1 (оригинальный)", file: "orig1.mp3", volume: 1.0 },
+    const config = [
+      { label: "Звук 1 (оригинал)", file: "orig1.mp3", volume: 1.0 },
       { label: "Звук 1 (средний)", file: "orig1.mp3", volume: 0.5 },
-      { label: "Звук 2 (оригинальный)", file: "medium1.mp3", volume: 1.0 },
-      { label: "Звук 2 (средний)", file: "medium1.mp3", volume: 0.5 },
+      { label: "Звук 2 (оригинал)", file: "medium2.mp3", volume: 1.0 },
+      { label: "Звук 2 (средний)", file: "medium.mp3", volume: 0.5 },
     ];
 
     const buffers = {};
     let currentSource = null;
 
     async function loadAudio(file) {
-      if (buffers[file]) return;
-      const response = await fetch(file);
-      const arrayBuffer = await response.arrayBuffer();
-      buffers[file] = await audioCtx.decodeAudioData(arrayBuffer);
+      if (buffers[file]) return buffers[file];
+      try {
+        const response = await fetch(file);
+        const arrayBuffer = await response.arrayBuffer();
+        buffers[file] = await audioCtx.decodeAudioData(arrayBuffer);
+        return buffers[file];
+      } catch (err) {
+        alert("Не удалось загрузить: " + file);
+        return null;
+      }
     }
 
-    async function playSound(file, label) {
-      try {
-        await loadAudio(file);
+    async function playSound(file, volume, label) {
+      const audioBuffer = await loadAudio(file);
+      if (!audioBuffer) return;
 
-        if (currentSource) {
-          currentSource.stop();
-        }
-
-        const source = audioCtx.createBufferSource();
-        source.buffer = buffers[file];
-
-        const gainNode = audioCtx.createGain();
-        gainNode.gain.value = 1.0;
-
-        source.connect(gainNode).connect(audioCtx.destination);
-        source.start();
-
-        currentSource = source;
-
-        document.getElementById('volumeDisplay').textContent = `Громкость: ${label.match(/(.*?)/)[1]}`;
-      } catch (err) {
-        alert(`Ошибка загрузки звука: ${file}`);
+      if (currentSource) {
+        currentSource.stop();
       }
+
+      const source = audioCtx.createBufferSource();
+      source.buffer = audioBuffer;
+
+      const gainNode = audioCtx.createGain();
+      gainNode.gain.value = volume;
+
+      source.connect(gainNode).connect(audioCtx.destination);
+      source.start();
+
+      currentSource = source;
+      document.getElementById('volumeDisplay').textContent = `Громкость: ${label.match(/(.*?)/)[1]}`;
     }
 
     function createButtons() {
       const container = document.getElementById('buttonsContainer');
-      sounds.forEach(sound => {
+      config.forEach(item => {
         const btn = document.createElement('button');
         btn.className = 'sound-button';
-        btn.textContent = sound.label;
-        btn.onclick = () => playSound(sound.file, sound.label);
+        btn.textContent = item.label;
+        btn.onclick = () => playSound(item.file, item.volume, item.label);
         container.appendChild(btn);
       });
     }
