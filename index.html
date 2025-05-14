@@ -1,47 +1,73 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE html><html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <title>Звуки</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Soundpad Web</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2em;
+      background: #f0f0f0;
+    }
+    button {
+      margin: 10px;
+      padding: 15px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
+    #volumeDisplay {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #333;
+    }
+    input[type="file"] {
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
-  <div class="container" id="sound-list"></div>
+  <h1>Soundpad Web</h1>
+  <input type="file" id="audioFile" accept="audio/*">
+  <br>
+  <button onclick="playOriginal()">Оригинальный звук</button>
+  <button onclick="playMedium()">Средняя громкость</button>
+  <div id="volumeDisplay">Громкость: -</div>  <script>
+    let audioBuffer;
+    let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-  <script>
-    const sounds = [
-      {
-        id: "sound1",
-        name: "Машина едет",
-        volume: "громко",
-        image: "cones/cone1.png",
-        mp3_original: "sounds/sound1_original.mp3",
-        mp3_adjusted: "sounds/sound1_adjusted.mp3"
-      },
-      {
-        id: "sound2",
-        name: "Пешеход идет",
-        volume: "тихо",
-        image: "cones/cone1.png",
-        mp3_original: "sounds/sound2_original.mp3",
-        mp3_adjusted: "sounds/sound2_adjusted.mp3"
-      }
-    ];
+    document.getElementById('audioFile').addEventListener('change', async function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
 
-    const list = document.getElementById("sound-list");
-    sounds.forEach(sound => {
-      const card = document.createElement("a");
-      card.href = sound.html#${sound.id};
-      card.className = "sound-card";
-      card.innerHTML = 
-        <img src="${sound.image}" alt="Конус" />
-        <div class="sound-name">${sound.name}</div>
-      ;
-      list.appendChild(card);
+      const arrayBuffer = await file.arrayBuffer();
+      audioCtx.decodeAudioData(arrayBuffer, (buffer) => {
+        audioBuffer = buffer;
+      });
     });
 
-    localStorage.setItem("sounds", JSON.stringify(sounds));
-  </script>
-</body>
-</html>
+    function playSound(volume) {
+      if (!audioBuffer) return alert('Сначала выберите аудиофайл.');
 
+      const source = audioCtx.createBufferSource();
+      source.buffer = audioBuffer;
+
+      const gainNode = audioCtx.createGain();
+      gainNode.gain.value = volume;
+
+      source.connect(gainNode).connect(audioCtx.destination);
+      source.start();
+
+      document.getElementById('volumeDisplay').textContent = `Громкость: ${Math.round(volume * 100)}%`;
+    }
+
+    function playOriginal() {
+      playSound(1.0);
+    }
+
+    function playMedium() {
+      playSound(0.5);
+    }
+  </script></body>
+</html>
