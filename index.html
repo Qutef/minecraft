@@ -44,14 +44,14 @@
   <div id="volumeDisplay">Громкость: -</div>  <script>
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     const sounds = [
-      { label: "Звук 1 (оригинал)", file: "original1.mp3", volume: 1.0 },
-      { label: "Звук 1 (средний)", file: "original1.mp3", volume: 0.5 },
-      { label: "Звук 2 (оригинал)", file: "medium1.mp3", volume: 1.0 },
+      { label: "Звук 1 (оригинальный)", file: "orig1.mp3", volume: 1.0 },
+      { label: "Звук 1 (средний)", file: "orig1.mp3", volume: 0.5 },
+      { label: "Звук 2 (оригинальный)", file: "medium1.mp3", volume: 1.0 },
       { label: "Звук 2 (средний)", file: "medium1.mp3", volume: 0.5 },
-      // Добавь больше звуков по желанию
     ];
 
     const buffers = {};
+    let currentSource = null;
 
     async function loadAudio(file) {
       if (buffers[file]) return;
@@ -63,6 +63,11 @@
     async function playSound(file, label) {
       try {
         await loadAudio(file);
+
+        if (currentSource) {
+          currentSource.stop();
+        }
+
         const source = audioCtx.createBufferSource();
         source.buffer = buffers[file];
 
@@ -71,6 +76,8 @@
 
         source.connect(gainNode).connect(audioCtx.destination);
         source.start();
+
+        currentSource = source;
 
         document.getElementById('volumeDisplay').textContent = `Громкость: ${label.match(/(.*?)/)[1]}`;
       } catch (err) {
