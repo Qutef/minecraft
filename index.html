@@ -84,7 +84,7 @@
       source.start();
 
       currentSource = source;
-      document.getElementById('volumeDisplay').textContent = `Громкость: ${label.match(/(.*?)/)[1]}`;
+      document.getElementById('volumeDisplay').textContent = `Громкость: ${Math.round(volume * 100)}%`;
     }
 
     function createButtons() {
