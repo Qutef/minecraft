@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Звуки</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    {% for sound in sounds %}
+    <a href="/sound/{{ sound.id }}" class="bg-white rounded-xl shadow p-4 flex flex-col items-center hover:bg-gray-50 transition">
+      <img src="/static/{{ sound.image }}" class="w-24 h-24 mb-2" alt="Конус">
+      <span class="text-center font-semibold">{{ sound.name }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</body>
+</html>
