@@ -41,6 +41,7 @@
 <body>
   <h1>Soundpad Web</h1>
   <div class="grid" id="buttonsContainer"></div>
+  <button class="sound-button" onclick="currentSource.stop()">Остановить звук</button>
   <div id="volumeDisplay">Громкость: -</div>  <script>
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     const config = [
