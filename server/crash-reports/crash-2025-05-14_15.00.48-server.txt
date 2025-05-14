@@ -1,0 +1,361 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  ForgelinPlugin (Forgelin_1.8.4.jar)
+  CreativePatchingLoader (CreativeCore_v1.10.71_mc1.12.2.jar)
+  PhosphorFMLLoadingPlugin (phosphor_forge_mc1.12.2_0.2.7_universal.jar)
+  CamPatchingLoader (CMDCam_v1.4.12_mc1.12.2.jar)
+  weaponlib (mw3.0_sqr-0.7.25_BETA_mc1.12.2.jar)
+  McLib core mod (mclib-2.4.3-1.12.2.jar)
+  BlockbusterCore (blockbuster-2.7.1-1.12.2.jar)
+  BetterFoliageLoader (BetterFoliage-MC1.12-2.3.3.jar)
+Contact their authors BEFORE contacting forge
+
+// My bad.
+
+Time: 14.05.25 15:00
+Description: Watching Server
+
+java.lang.Error: ServerHangWatchdog detected that a single server tick took 160,54 seconds (should be max 0.05)
+	at java.util.zip.ZipFile.getEntry(Native Method)
+	at java.util.zip.ZipFile.getEntry(ZipFile.java:316)
+	at java.util.jar.JarFile.getEntry(JarFile.java:240)
+	at java.util.jar.JarFile.getJarEntry(JarFile.java:223)
+	at sun.misc.URLClassPath$JarLoader.getResource(URLClassPath.java:1054)
+	at sun.misc.URLClassPath.getResource(URLClassPath.java:249)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:405)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:352)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:106)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at com.mojang.authlib.GameProfile.toString(GameProfile.java:105)
+	at java.lang.String.valueOf(String.java:2994)
+	at java.lang.StringBuilder.append(StringBuilder.java:131)
+	at net.minecraft.server.network.NetHandlerLoginServer.func_147317_d(NetHandlerLoginServer.java:147)
+	at net.minecraft.server.network.NetHandlerLoginServer.func_147231_a(NetHandlerLoginServer.java:142)
+	at net.minecraft.network.NetworkManager.func_179293_l(NetworkManager.java:457)
+	at net.minecraft.network.NetworkSystem.func_151269_c(NetworkSystem.java:213)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:790)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server Watchdog
+Stacktrace:
+	at java.util.zip.ZipFile.getEntry(Native Method)
+	at java.util.zip.ZipFile.getEntry(ZipFile.java:316)
+	at java.util.jar.JarFile.getEntry(JarFile.java:240)
+	at java.util.jar.JarFile.getJarEntry(JarFile.java:223)
+	at sun.misc.URLClassPath$JarLoader.getResource(URLClassPath.java:1054)
+	at sun.misc.URLClassPath.getResource(URLClassPath.java:249)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:405)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:352)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:106)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at com.mojang.authlib.GameProfile.toString(GameProfile.java:105)
+	at java.lang.String.valueOf(String.java:2994)
+	at java.lang.StringBuilder.append(StringBuilder.java:131)
+	at net.minecraft.server.network.NetHandlerLoginServer.func_147317_d(NetHandlerLoginServer.java:147)
+	at net.minecraft.server.network.NetHandlerLoginServer.func_147231_a(NetHandlerLoginServer.java:142)
+	at net.minecraft.network.NetworkManager.func_179293_l(NetworkManager.java:457)
+	at net.minecraft.network.NetworkSystem.func_151269_c(NetworkSystem.java:213)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:790)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+
+-- Thread Dump --
+Details:
+	Threads: "Netty Server IO #6" Id=47 BLOCKED on java.util.Collections$SynchronizedRandomAccessList@664d99a5 owned by "Server thread" Id=18
+	at java.util.Collections$SynchronizedCollection.add(Collections.java:2037)
+	-  blocked on java.util.Collections$SynchronizedRandomAccessList@664d99a5
+	at net.minecraft.network.NetworkSystem$4.initChannel(NetworkSystem.java:116)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:113)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:105)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:597)
+	at io.netty.channel.DefaultChannelPipeline.access$000(DefaultChannelPipeline.java:44)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1387)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1122)
+	...
+
+
+"Netty Server IO #5" Id=46 BLOCKED on java.util.Collections$SynchronizedRandomAccessList@664d99a5 owned by "Server thread" Id=18
+	at java.util.Collections$SynchronizedCollection.add(Collections.java:2037)
+	-  blocked on java.util.Collections$SynchronizedRandomAccessList@664d99a5
+	at net.minecraft.network.NetworkSystem$4.initChannel(NetworkSystem.java:116)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:113)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:105)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:597)
+	at io.netty.channel.DefaultChannelPipeline.access$000(DefaultChannelPipeline.java:44)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1387)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1122)
+	...
+
+
+"Netty Server IO #4" Id=45 RUNNABLE (in native)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(WindowsSelectorImpl.java:314)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(WindowsSelectorImpl.java:293)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(WindowsSelectorImpl.java:174)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@688a6b1c
+	-  locked java.util.Collections$UnmodifiableSet@6cb5f2d5
+	-  locked sun.nio.ch.WindowsSelectorImpl@29b76127
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:732)
+	...
+
+
+"Netty Server IO #3" Id=44 RUNNABLE
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(WindowsSelectorImpl.java:314)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(WindowsSelectorImpl.java:293)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(WindowsSelectorImpl.java:174)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@233d4505
+	-  locked java.util.Collections$UnmodifiableSet@185408f5
+	-  locked sun.nio.ch.WindowsSelectorImpl@5b347270
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:732)
+	...
+
+
+"Netty Server IO #2" Id=43 RUNNABLE
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(WindowsSelectorImpl.java:314)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(WindowsSelectorImpl.java:293)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(WindowsSelectorImpl.java:174)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@49989e68
+	-  locked java.util.Collections$UnmodifiableSet@c4ef33
+	-  locked sun.nio.ch.WindowsSelectorImpl@386f5c7e
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:732)
+	...
+
+
+"Chunk I/O Executor Thread-1" Id=42 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@40301ef1
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@40301ef1
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"threadDeathWatcher-2-1" Id=41 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at io.netty.util.ThreadDeathWatcher$Watcher.run(ThreadDeathWatcher.java:152)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Netty Server IO #1" Id=40 RUNNABLE (in native)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(WindowsSelectorImpl.java:314)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(WindowsSelectorImpl.java:293)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(WindowsSelectorImpl.java:174)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@4dd6a341
+	-  locked java.util.Collections$UnmodifiableSet@6a4c70bf
+	-  locked sun.nio.ch.WindowsSelectorImpl@28024d24
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:732)
+	...
+
+
+"File IO Thread" Id=39 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at net.minecraft.world.storage.ThreadedFileIOBase.func_75736_b(SourceFile:51)
+	at net.minecraft.world.storage.ThreadedFileIOBase.run(SourceFile:30)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Server Watchdog" Id=36 RUNNABLE
+	at sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:454)
+	at net.minecraft.server.dedicated.ServerHangWatchdog.run(ServerHangWatchdog.java:45)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Timer-0" Id=35 TIMED_WAITING on java.util.TaskQueue@68051943
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@68051943
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"Netty Server IO #0" Id=33 RUNNABLE
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(WindowsSelectorImpl.java:314)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(WindowsSelectorImpl.java:293)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(WindowsSelectorImpl.java:174)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@10b163a9
+	-  locked java.util.Collections$UnmodifiableSet@19f13088
+	-  locked sun.nio.ch.WindowsSelectorImpl@23a035ff
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:732)
+	...
+
+
+"Java2D Disposer" Id=31 WAITING on java.lang.ref.ReferenceQueue$Lock@63afffc9
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@63afffc9
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+	at sun.java2d.Disposer.run(Disposer.java:148)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Server console handler" Id=21 RUNNABLE (in native)
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(FileInputStream.java:255)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	-  locked java.io.BufferedInputStream@7818643e
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	-  locked java.io.InputStreamReader@68fd7ec5
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	...
+
+
+"DestroyJavaVM" Id=20 RUNNABLE
+
+
+"Server thread" Id=18 RUNNABLE
+	at java.util.zip.ZipFile.getEntry(Native Method)
+	at java.util.zip.ZipFile.getEntry(ZipFile.java:316)
+	-  locked java.util.jar.JarFile@4ad0b1e8
+	at java.util.jar.JarFile.getEntry(JarFile.java:240)
+	at java.util.jar.JarFile.getJarEntry(JarFile.java:223)
+	at sun.misc.URLClassPath$JarLoader.getResource(URLClassPath.java:1054)
+	at sun.misc.URLClassPath.getResource(URLClassPath.java:249)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	...
+
+
+"Server Infinisleeper" Id=17 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at net.minecraft.server.dedicated.DedicatedServer$1.run(DedicatedServer.java:82)
+
+
+"Snooper Timer" Id=16 TIMED_WAITING on java.util.TaskQueue@6e97a995
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@6e97a995
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"Attach Listener" Id=5 RUNNABLE
+
+
+"Signal Dispatcher" Id=4 RUNNABLE
+
+
+"Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@21070a5e
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@21070a5e
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:216)
+
+
+"Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@1dd0cb8c
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.Reference$Lock@1dd0cb8c
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+
+
+Stacktrace:
+	at net.minecraft.server.dedicated.ServerHangWatchdog.run(ServerHangWatchdog.java:62)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0-262, OpenLogic-OpenJDK
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 274652608 bytes (261 MB) / 1796734976 bytes (1713 MB) up to 1908932608 bytes (1820 MB)
+	JVM Flags: 2 total; -Xmx2048M -Xms1024M
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.42 Powered by Forge 14.23.5.2860 20 mods loaded, 18 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID                  | Version        | Source                                      | Signature                                |
+	|:------ |:------------------- |:-------------- |:------------------------------------------- |:---------------------------------------- |
+	| LCHIJA | minecraft           | 1.12.2         | minecraft.jar                               | None                                     |
+	| LCHIJA | mcp                 | 9.42           | minecraft.jar                               | None                                     |
+	| LCHIJA | FML                 | 8.0.99.99      | forge-1.12.2-14.23.5.2860.jar               | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | forge               | 14.23.5.2860   | forge-1.12.2-14.23.5.2860.jar               | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | creativecoredummy   | 1.0.0          | minecraft.jar                               | None                                     |
+	| LCHIJA | mclib               | 2.4.3          | mclib-2.4.3-1.12.2.jar                      | None                                     |
+	| LCHIJA | metamorph           | 1.4            | metamorph-1.4-1.12.2.jar                    | None                                     |
+	| LCHIJA | blockbuster         | 2.7.1          | blockbuster-2.7.1-1.12.2.jar                | None                                     |
+	| LCHIJA | chiselsandbits      | 14.33          | chiselsandbits-14.33 (1).jar                | None                                     |
+	| LCHIJA | creativecore        | 1.10.0         | CreativeCore_v1.10.71_mc1.12.2.jar          | None                                     |
+	| LCHIJA | cmdcam              | 1.4.0          | CMDCam_v1.4.12_mc1.12.2.jar                 | None                                     |
+	| LCHIJA | props               | 2.6.3.7        | Decocraft-2.6.3.7_1.12.2.jar                | None                                     |
+	| LCHIJA | emoticons           | 1.1.2          | emoticons-1.1.2-1.12.2.jar                  | None                                     |
+	| LCHIJA | forgelin            | 1.8.4          | Forgelin_1.8.4.jar                          | None                                     |
+	| LCHIJA | mw                  | 0.7.1          | mw3.0_sqr-0.7.25_BETA_mc1.12.2.jar          | None                                     |
+	| LCHIJA | removehudbutnothand | 1.12.2-2.0.0.0 | RemoveHudButNotHand_1.12.2_2.0.0.0.jar      | None                                     |
+	| LCHIJA | worldedit           | 6.1.10         | worldedit-forge-mc1.12.2-6.1.10-dist.jar    | None                                     |
+	| LCHIJA | phosphor-lighting   | 1.12.2-0.2.7   | phosphor_forge_mc1.12.2_0.2.7_universal.jar | None                                     |
+	| UD     | blockbuster_core    | 2.7.1          | minecraft.jar                               | None                                     |
+	| UD     | mclib_core          | 2.4.3          | minecraft.jar                               | None                                     |
+
+	Loaded coremods (and transformers): 
+ForgelinPlugin (Forgelin_1.8.4.jar)
+  
+CreativePatchingLoader (CreativeCore_v1.10.71_mc1.12.2.jar)
+  
+PhosphorFMLLoadingPlugin (phosphor_forge_mc1.12.2_0.2.7_universal.jar)
+  
+CamPatchingLoader (CMDCam_v1.4.12_mc1.12.2.jar)
+  com.creativemd.cmdcam.transform.CamTransformer
+weaponlib (mw3.0_sqr-0.7.25_BETA_mc1.12.2.jar)
+  com.vicmatskiv.weaponlib.core.WeaponlibClassTransformer
+McLib core mod (mclib-2.4.3-1.12.2.jar)
+  mchorse.mclib.core.McLibCMClassTransformer
+BlockbusterCore (blockbuster-2.7.1-1.12.2.jar)
+  mchorse.blockbuster.core.BBCoreClassTransformer
+BetterFoliageLoader (BetterFoliage-MC1.12-2.3.3.jar)
+  mods.betterfoliage.loader.BetterFoliageTransformer
+	Profiler Position: N/A (disabled)
+	Player Count: 0 / 5; []
+	Is Modded: Definitely; Server brand changed to 'fml,forge'
+	Type: Dedicated Server (map_server.txt)
