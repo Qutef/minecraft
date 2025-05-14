@@ -7,57 +7,88 @@
       font-family: sans-serif;
       text-align: center;
       padding: 2em;
-      background: #f0f0f0;
+      background: #e0e7ff;
     }
-    button {
+    .sound-button {
+      display: inline-block;
       margin: 10px;
       padding: 15px 25px;
       font-size: 16px;
-      border-radius: 8px;
+      border-radius: 12px;
       border: none;
+      background-color: #4f46e5;
+      color: white;
       cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .sound-button:hover {
+      background-color: #4338ca;
     }
     #volumeDisplay {
-      margin-top: 20px;
+      margin-top: 30px;
       font-size: 20px;
-      color: #333;
+      color: #1e1e1e;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>Soundpad Web</h1><button onclick="playSound('original')">Оригинальный звук</button> <button onclick="playSound('medium')">Средняя громкость</button>
-
+  <h1>Soundpad Web</h1>
+  <div class="grid" id="buttonsContainer"></div>
   <div id="volumeDisplay">Громкость: -</div>  <script>
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    let buffers = {};
+    const sounds = [
+      { label: "Звук 1 (100%)", file: "original1.mp3", volume: 1.0 },
+      { label: "Звук 1 (50%)", file: "medium1.mp3", volume: 1.0 },
+      { label: "Звук 2 (100%)", file: "original2.mp3", volume: 1.0 },
+      { label: "Звук 2 (50%)", file: "medium2.mp3", volume: 1.0 },
+      // Добавь больше звуков по желанию
+    ];
 
-    async function loadAudio(name, url) {
-      const response = await fetch(url);
+    const buffers = {};
+
+    async function loadAudio(file) {
+      if (buffers[file]) return;
+      const response = await fetch(file);
       const arrayBuffer = await response.arrayBuffer();
-      buffers[name] = await audioCtx.decodeAudioData(arrayBuffer);
+      buffers[file] = await audioCtx.decodeAudioData(arrayBuffer);
     }
 
-    async function init() {
-      await loadAudio('original', 'original.mp3');
-      await loadAudio('medium', 'medium.mp3');
+    async function playSound(file, label) {
+      try {
+        await loadAudio(file);
+        const source = audioCtx.createBufferSource();
+        source.buffer = buffers[file];
+
+        const gainNode = audioCtx.createGain();
+        gainNode.gain.value = 1.0;
+
+        source.connect(gainNode).connect(audioCtx.destination);
+        source.start();
+
+        document.getElementById('volumeDisplay').textContent = `Громкость: ${label.match(/(.*?)/)[1]}`;
+      } catch (err) {
+        alert(`Ошибка загрузки звука: ${file}`);
+      }
     }
 
-    function playSound(type) {
-      if (!buffers[type]) return alert('Аудио не загружено.');
-
-      const source = audioCtx.createBufferSource();
-      source.buffer = buffers[type];
-
-      const gainNode = audioCtx.createGain();
-      gainNode.gain.value = 1.0;
-
-      source.connect(gainNode).connect(audioCtx.destination);
-      source.start();
-
-      const label = type === 'original' ? '100%' : '50%';
-      document.getElementById('volumeDisplay').textContent = `Громкость: ${label}`;
+    function createButtons() {
+      const container = document.getElementById('buttonsContainer');
+      sounds.forEach(sound => {
+        const btn = document.createElement('button');
+        btn.className = 'sound-button';
+        btn.textContent = sound.label;
+        btn.onclick = () => playSound(sound.file, sound.label);
+        container.appendChild(btn);
+      });
     }
 
-    init();
+    createButtons();
   </script></body>
 </html>
