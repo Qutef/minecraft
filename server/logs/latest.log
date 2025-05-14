@@ -1,0 +1,235 @@
+[15:32:16] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[15:32:16] [Server thread/INFO]: Loading properties
+[15:32:16] [Server console handler/ERROR]: Exception handling console input
+java.io.IOException: Неверный дескриптор
+	at java.io.FileInputStream.readBytes(Native Method) ~[?:1.8.0-262]
+	at java.io.FileInputStream.read(FileInputStream.java:255) ~[?:1.8.0-262]
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:284) ~[?:1.8.0-262]
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345) ~[?:1.8.0-262]
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284) ~[?:1.8.0-262]
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326) ~[?:1.8.0-262]
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178) ~[?:1.8.0-262]
+	at java.io.InputStreamReader.read(InputStreamReader.java:184) ~[?:1.8.0-262]
+	at java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:1.8.0-262]
+	at java.io.BufferedReader.readLine(BufferedReader.java:324) ~[?:1.8.0-262]
+	at java.io.BufferedReader.readLine(BufferedReader.java:389) ~[?:1.8.0-262]
+	at nz$2.run(SourceFile:100) [minecraft_server.1.12.2.jar:?]
+[15:32:16] [Server thread/INFO]: Default game type: SURVIVAL
+[15:32:16] [Server thread/INFO]: Generating keypair
+[15:32:16] [Server thread/INFO]: Starting Minecraft server on 192.168.0.104:25565
+[15:32:16] [Server thread/INFO]: Using default channel type
+[15:32:17] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[15:32:17] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[15:32:17] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[15:32:17] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[15:32:18] [Server thread/INFO]: Preparing level "world"
+[15:32:19] [Server thread/INFO]: Loaded 488 advancements
+[15:32:19] [Server thread/INFO]: Preparing start region for level 0
+[15:32:20] [Server thread/INFO]: Preparing spawn area: 5%
+[15:32:20] [Server thread/WARN]: Ignoring unknown attribute 'forge.swimSpeed'
+[15:32:20] [Server thread/WARN]: Ignoring unknown attribute 'forge.swimSpeed'
+[15:32:20] [Server thread/WARN]: Ignoring unknown attribute 'forge.swimSpeed'
+[15:32:20] [Server thread/WARN]: Ignoring unknown attribute 'forge.swimSpeed'
+[15:32:20] [Server thread/WARN]: Ignoring unknown attribute 'forge.swimSpeed'
+[15:32:20] [Server thread/WARN]: Ignoring unknown attribute 'forge.swimSpeed'
+[15:32:20] [Server thread/WARN]: Ignoring unknown attribute 'forge.swimSpeed'
+[15:32:20] [Server thread/WARN]: Ignoring unknown attribute 'forge.swimSpeed'
+[15:32:20] [Server thread/WARN]: Ignoring unknown attribute 'forge.swimSpeed'
+[15:32:20] [Server thread/WARN]: Ignoring unknown attribute 'forge.swimSpeed'
+[15:32:20] [Server thread/WARN]: Ignoring unknown attribute 'forge.swimSpeed'
+[15:32:20] [Server thread/WARN]: Ignoring unknown attribute 'forge.swimSpeed'
+[15:32:20] [Server thread/WARN]: Ignoring unknown attribute 'forge.swimSpeed'
+[15:32:20] [Server thread/WARN]: Ignoring unknown attribute 'forge.swimSpeed'
+[15:32:20] [Server thread/WARN]: Ignoring unknown attribute 'forge.swimSpeed'
+[15:32:21] [Server thread/WARN]: Ignoring unknown attribute 'forge.swimSpeed'
+[15:32:21] [Server thread/WARN]: Ignoring unknown attribute 'forge.swimSpeed'
+[15:32:21] [Server thread/WARN]: Ignoring unknown attribute 'forge.swimSpeed'
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.entities.tiledoor
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.entities.tiledoor
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.entities.tiledoor
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/INFO]: Preparing spawn area: 58%
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tileprops
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tileprops
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.entities.tiledoor
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.entities.tiledoor
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tileprops
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.entities.tilelinkedmodel
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.entities.tilelinkedmodel
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.entities.tilelinkedmodel
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.entities.tilelinkedmodel
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.tilefake
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id props:com.mia.props.common.entities.tilelinkedmodel
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/WARN]: Skipping BlockEntity with id minecraft:mod.chiselsandbits.tileentitychiseled
+[15:32:21] [Server thread/INFO]: Done (3,405s)! For help, type "help" or "?"
+[15:32:24] [Server thread/INFO]: Stopping server
+[15:32:24] [Server thread/INFO]: Saving players
+[15:32:24] [Server thread/INFO]: Saving worlds
+[15:32:24] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[15:32:24] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+[15:32:24] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+[15:32:24] [Server Shutdown Thread/INFO]: Stopping server
+[15:32:24] [Server Shutdown Thread/INFO]: Saving players
+[15:32:24] [Server Shutdown Thread/INFO]: Saving worlds
