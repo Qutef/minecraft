@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ sound.name }}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white p-6 flex flex-col items-center space-y-4">
+  <img src="/static/{{ sound.image }}" class="w-32 h-32" alt="Конус">
+  <h1 class="text-2xl font-bold">{{ sound.name }}</h1>
+  <p class="text-lg text-gray-600">{{ sound.volume }}</p>
+
+  <div class="flex gap-4 mt-4">
+    <a href="/static/{{ sound.mp3_adjusted }}" download class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Скачать mp3 отрегулированное</a>
+    <a href="/static/{{ sound.mp3_original }}" download class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Скачать mp3 оригинал</a>
+  </div>
+</body>
+</html>
