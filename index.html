@@ -71,12 +71,12 @@
       sound1: {
         title: "Звук 1",
         loud: { file: "sound1_loud.mp3", label: "Громко" },
-        quiet: { file: "sound1_quiet.mp3", label: "Тихо" }
+        quiet: { file: "sound1_quiet.mp3"}
       },
       sound2: {
         title: "Звук 2",
-        loud: { file: "sound2_loud.mp3", label: "80%" },
-        quiet: { file: "sound2_quiet.mp3", label: "40%" }
+        loud: { file: "sound2_loud.mp3", label: "Громко" },
+        quiet: { file: "sound2_quiet.mp3"}
       }
     };
 
@@ -94,7 +94,7 @@
 
         const volume = document.createElement('p');
         volume.className = 'volume-label';
-        volume.textContent = `Громкость: ${sound.loud.label} / ${sound.quiet.label}`;
+        volume.textContent = `Громкость: ${sound.loud.label}`;
         card.appendChild(volume);
 
         const btn = document.createElement('button');
