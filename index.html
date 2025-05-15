@@ -146,7 +146,7 @@
       stopSound();
       currentSound = sounds[key];
       document.getElementById('soundTitle').textContent = currentSound.title;
-      document.getElementById('volumeTag').textContent = `Громкость: ${currentSound.loud.label} / ${currentSound.quiet.label}`;
+      document.getElementById('volumeTag').textContent = `Громкость: ${currentSound.loud.label}`;
       document.getElementById('dlLoud').href = currentSound.loud.file;
       document.getElementById('dlQuiet').href = currentSound.quiet.file;
 
