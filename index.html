@@ -53,10 +53,10 @@
     <h2 id="soundTitle"></h2>
     <p id="volumeTag"></p>
     <div class="grid">
-      <button class="menu-button" onclick="playSound(currentSound.loud.file)">Слушать (громко)</button>
-      <a id="dlLoud" class="menu-button" download>Скачать (громко)</a>
-      <button class="menu-button" onclick="playSound(currentSound.quiet.file)">Слушать (тихо)</button>
-      <a id="dlQuiet" class="menu-button" download>Скачать (тихо)</a>
+      <button class="menu-button" onclick="playSound(currentSound.loud.file)">Слушать (${sound.loud.label})</button>
+      <a id="dlLoud" class="menu-button" download>Скачать (${sound.loud.label})</a>
+      <button class="menu-button" onclick="playSound(currentSound.quiet.file)">Слушать (Отрегулировано)</button>
+      <a id="dlQuiet" class="menu-button" download>Скачать (Отрегулировано)</a>
       <button class="menu-button" onclick="stopSound()">Остановить</button>
     </div>
     <br>
@@ -75,7 +75,7 @@
       },
       sound2: {
         title: "Звук 2",
-        loud: { file: "sound2_loud.mp3", label: "Громко" },
+        loud: { file: "sound2_loud.mp3", label: "Тихо" },
         quiet: { file: "sound2_quiet.mp3"}
       }
     };
