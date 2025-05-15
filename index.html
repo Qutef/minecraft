@@ -9,7 +9,7 @@
       padding: 2em;
       background: #e0e7ff;
     }
-    .sound-button {
+    .sound-button, .menu-button {
       display: inline-block;
       margin: 10px;
       padding: 15px 25px;
@@ -21,7 +21,7 @@
       cursor: pointer;
       transition: background-color 0.2s ease;
     }
-    .sound-button:hover {
+    .sound-button:hover, .menu-button:hover {
       background-color: #4338ca;
     }
     #volumeDisplay {
@@ -36,23 +36,37 @@
       gap: 20px;
       margin-top: 20px;
     }
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
-  <h1>Soundpad Web</h1>
-  <div class="grid" id="buttonsContainer"></div>
-  <button class="sound-button" onclick="currentSource.stop()">Остановить звук</button>
-  <div id="volumeDisplay">Громкость: -</div>  <script>
+  <h1>Soundpad Web</h1>  <div id="mainMenu" class="grid">
+    <button class="sound-button" onclick="openMenu('sound1')">Звук 1</button>
+    <button class="sound-button" onclick="openMenu('sound2')">Звук 2</button>
+  </div>  <div id="soundMenu" class="hidden">
+    <h2 id="soundTitle">Название звука</h2>
+    <p id="volumeText">Громкость: -</p>
+    <div class="grid">
+      <button class="menu-button" onclick="playSound(currentSound.file, 0.5, true)">Слушать (регулировка)</button>
+      <a id="dlQuiet" class="menu-button" download>Скачать (регулировка)</a>
+      <button class="menu-button" onclick="playSound(currentSound.file, 1.0, false)">Слушать (оригинал)</button>
+      <a id="dlOriginal" class="menu-button" download>Скачать (оригинал)</a>
+      <button class="menu-button" onclick="stopSound()">Остановить</button>
+    </div>
+    <br>
+    <button onclick="goBack()" class="menu-button">Назад</button>
+  </div>  <script>
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    const config = [
-      { label: "Звук 1 (оригинал)", file: "tagmp3_Yamakasi_-_ANDERGRAUND_78761809.mp3", volume: 1.0 },
-      { label: "Звук 1 (средний)", file: "tagmp3_Yamakasi_-_ANDERGRAUND_78761809.mp3", volume: 0.5 },
-      { label: "Звук 2 (оригинал)", file: "medium1.mp3", volume: 1.0 },
-      { label: "Звук 2 (средний)", file: "medium1.mp3", volume: 0.5 },
-    ];
-
     const buffers = {};
     let currentSource = null;
+    let currentSound = null;
+
+    const sounds = {
+      sound1: { title: "Звук 1", file: "sound1.mp3" },
+      sound2: { title: "Звук 2", file: "sound2.mp3" },
+    };
 
     async function loadAudio(file) {
       if (buffers[file]) return buffers[file];
@@ -67,13 +81,11 @@
       }
     }
 
-    async function playSound(file, volume, label) {
+    async function playSound(file, volume, isQuiet) {
       const audioBuffer = await loadAudio(file);
       if (!audioBuffer) return;
 
-      if (currentSource) {
-        currentSource.stop();
-      }
+      if (currentSource) currentSource.stop();
 
       const source = audioCtx.createBufferSource();
       source.buffer = audioBuffer;
@@ -85,20 +97,31 @@
       source.start();
 
       currentSource = source;
-      document.getElementById('volumeDisplay').textContent = `Громкость: ${Math.round(volume * 100)}%`;
+      document.getElementById('volumeText').textContent = isQuiet ? "Громкость: Тихо" : "Громкость: Громко";
     }
 
-    function createButtons() {
-      const container = document.getElementById('buttonsContainer');
-      config.forEach(item => {
-        const btn = document.createElement('button');
-        btn.className = 'sound-button';
-        btn.textContent = item.label;
-        btn.onclick = () => playSound(item.file, item.volume, item.label);
-        container.appendChild(btn);
-      });
+    function stopSound() {
+      if (currentSource) {
+        currentSource.stop();
+        currentSource = null;
+      }
+      document.getElementById('volumeText').textContent = "Громкость: -";
     }
 
-    createButtons();
+    function openMenu(key) {
+      currentSound = sounds[key];
+      document.getElementById('soundTitle').textContent = currentSound.title;
+      document.getElementById('volumeText').textContent = "Громкость: -";
+      document.getElementById('mainMenu').classList.add('hidden');
+      document.getElementById('soundMenu').classList.remove('hidden');
+      document.getElementById('dlQuiet').href = currentSound.file;
+      document.getElementById('dlOriginal').href = currentSound.file;
+    }
+
+    function goBack() {
+      stopSound();
+      document.getElementById('mainMenu').classList.remove('hidden');
+      document.getElementById('soundMenu').classList.add('hidden');
+    }
   </script></body>
 </html>
