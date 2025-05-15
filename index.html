@@ -53,8 +53,8 @@
     <h2 id="soundTitle"></h2>
     <p id="volumeTag"></p>
     <div class="grid">
-      <button class="menu-button" onclick="playSound(currentSound.loud.file)">Слушать <br>${sound.loud.label}</br>)</button>
-      <a id="dlLoud" class="menu-button" download>Скачать (<br>${sound.loud.label}</br>)</a>
+      <button id="m1" class="menu-button" onclick="playSound(currentSound.loud.file)"></button>
+      <a id="dlLoud" class="menu-button" download></a>
       <button class="menu-button" onclick="playSound(currentSound.quiet.file)">Слушать (Отрегулировано)</button>
       <a id="dlQuiet" class="menu-button" download>Скачать (Отрегулировано)</a>
       <button class="menu-button" onclick="stopSound()">Остановить</button>
@@ -62,6 +62,11 @@
     <br>
     <button onclick="goBack()" class="menu-button">Назад</button>
   </div>  <script>
+    let myText =  `Слушать ${sound.loud.label}`;
+    let myText2 =  `Скачать ${sound.loud.label}`;
+    document.getElementById("m1").innerText = myText;
+    document.getElementById("dlLoud").innerText = myText2;
+
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     const buffers = {};
     let currentSource = null;
