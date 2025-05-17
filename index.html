@@ -59,11 +59,13 @@
        <br>
        <button class="menu-button" onclick="playSound(currentSound.quiet.file)">Слушать (отрегулировано)</button>
        <a id="dlQuiet" class="menu-button" download>Скачать (отрегулировано)</a>
+       <br>
+       <button onclick="goBack()" class="menu-button">Назад</button>
+       <button class="menu-button" onclick="stopSound()">Остановить</button>
       </div>
     </div>
     <br>
-    <button onclick="goBack()" class="menu-button">Назад</button>
-    <button class="menu-button" onclick="stopSound()">Остановить</button>
+    
   </div>  <script>
 
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
