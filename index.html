@@ -31,6 +31,13 @@
       gap: 20px;
       margin-top: 20px;
     }
+    .grids {
+      display: grid;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
     .sound-card {
       background: white;
       border-radius: 16px;
@@ -52,7 +59,7 @@
   <h1>SoundTap</h1>  <div id="mainMenu" class="grid"></div>  <div id="soundMenu" class="hidden">
     <h2 id="soundTitle"></h2>
     <p id="volumeTag"></p>
-    <div class="grid">
+    <div class="grids">
       <div>
        <button id="m1" class="menu-button" onclick="playSound(currentSound.loud.file)">Слушать (оригинал)</button>
        <a id="dlLoud" class="menu-button" download>Скачать (оригинал)</a>
@@ -60,7 +67,7 @@
        <button class="menu-button" onclick="playSound(currentSound.quiet.file)">Слушать (отрегулировано)</button>
        <a id="dlQuiet" class="menu-button" download>Скачать (отрегулировано)</a>
        <br>
-       <div class="grid">
+       <div class="grids">
         <button onclick="goBack()" class="menu-button">Назад</button>
         <button class="menu-button" onclick="stopSound()">Остановить</button>
        </div>
