@@ -53,15 +53,17 @@
     <h2 id="soundTitle"></h2>
     <p id="volumeTag"></p>
     <div class="grid">
-      <div style="text-align: center; border: 2px solid grey; padding: 20px;">
+      <div>
        <button id="m1" class="menu-button" onclick="playSound(currentSound.loud.file)">Слушать (оригинал)</button>
        <a id="dlLoud" class="menu-button" download>Скачать (оригинал)</a>
        <br>
        <button class="menu-button" onclick="playSound(currentSound.quiet.file)">Слушать (отрегулировано)</button>
        <a id="dlQuiet" class="menu-button" download>Скачать (отрегулировано)</a>
        <br>
-       <button onclick="goBack()" class="menu-button">Назад</button>
-       <button class="menu-button" onclick="stopSound()">Остановить</button>
+       <div>
+        <button onclick="goBack()" class="menu-button">Назад</button>
+        <button class="menu-button" onclick="stopSound()">Остановить</button>
+       </div>
       </div>
     </div>
     <br>
