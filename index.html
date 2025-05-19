@@ -53,7 +53,6 @@
 <body>
   <h1>SoundTap</h1>  <div id="mainMenu" class="grid"></div>  <div id="soundMenu" class="hidden">
     <h2 id="soundTitle"></h2>
-    <p id="volumeTag"></p>
     <div class="grids">
        
         <button id="m1" class="menu-button" onclick="playSound(currentSound.loud.file)">Слушать (оригинал)</button>
@@ -150,7 +149,6 @@
       stopSound();
       currentSound = sounds[key];
       document.getElementById('soundTitle').textContent = currentSound.title;
-      document.getElementById('volumeTag').textContent = `Громкость: ${currentSound.loud.label}`;
       document.getElementById('dlLoud').href = currentSound.loud.file;
       document.getElementById('dlQuiet').href = currentSound.quiet.file;
 
