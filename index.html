@@ -48,11 +48,6 @@
     .hidden {
       display: none;
     }
-    .volume-label {
-      font-size: 14px;
-      margin-top: 0.5em;
-      color: #333;
-    }
   </style>
 </head>
 <body>
@@ -106,10 +101,6 @@
         title.textContent = sound.title;
         card.appendChild(title);
 
-        const volume = document.createElement('p');
-        volume.className = 'volume-label';
-        volume.textContent = `Громкость: ${sound.loud.label}`;
-        card.appendChild(volume);
 
         const btn = document.createElement('button');
         btn.className = 'sound-button';
