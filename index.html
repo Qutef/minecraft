@@ -55,8 +55,8 @@
     <h2 id="soundTitle"></h2>
     <div class="grids">
        
-        <button id="m1" class="menu-button" onclick="playSound(currentSound.loud.file)">Слушать (оригинал)</button>
-        <a id="dlLoud" class="menu-button" download>Скачать (оригинал)</a>
+        <button id="m1" class="menu-button" onclick="playSound(currentSound.loud.file)">Слушать (громко)</button>
+        <a id="dlLoud" class="menu-button" download>Скачать (громко)</a>
         
         <button class="menu-button" onclick="playSound(currentSound.quiet.file)">Слушать (отрегулировано)</button>
         <a id="dlQuiet" class="menu-button" download>Скачать (отрегулировано)</a>
@@ -78,14 +78,54 @@
     const sounds = {
       sound1: {
         title: "Бомбардиро",
-        loud: { file: "bombadiro-crocodilo.mp3"},
-        quiet: { file: "bombadiro-crocodilo gromko.mp3"}
+        loud: { file: "bombadiro-crocodilo gromko.mp3"},
+        quiet: { file: "bombadiro-crocodilo.mp3"}
       },
       sound2: {
         title: "Тралалело",
         loud: { file: "t.mp3"},
         quiet: { file: "tralalelo-tralala.mp3"}
-      }
+      },
+      sound3: {
+        title: "Applepay",
+        loud: { file: "applepay громко"},
+        quiet: { file: "applepay.mp3"}
+      },
+      sound4: {
+        title: "rizz",
+        loud: { file: "rizz громко.mp3"},
+        quiet: { file: "rizz.mp3"}
+      },
+      sound5: {
+        title: "vine boom",
+        loud: { file: "vine-boom громко.mp3"},
+        quiet: { file: "vine-boom.mp3"}
+      },
+      sound6: {
+        title: "импостер",
+        loud: { file: "импостер громко.mp3"},
+        quiet: { file: "импостер.mp3"}
+      },
+      sound7: {
+        title: "майнкрафт еда",
+        loud: { file: "майнкрафт еда громко.mp3"},
+        quiet: { file: "майнкрафт еда.mp3"}
+      },
+      sound8: {
+        title: "неудача",
+        loud: { file: "неудача громко.mp3"},
+        quiet: { file: "неудача.mp3"}
+      },
+      sound9: {
+        title: "удача",
+        loud: { file: "удача громко.mp3"},
+        quiet: { file: "удача.mp3"}
+      },
+      sound10: {
+        title: "человек паук",
+        loud: { file: "человек паук громко.mp3"},
+        quiet: { file: "человек паук.mp3"}
+      },
     };
 
     function renderMainMenu() {
